@@ -4,4 +4,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+}
+
+
+.snake-game{
+    background-color: gray;
+    width: 100vmin;
+    height: 100vmin;
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(20, 1fr);
+}
+
+.snake {
+    background-color: green;
+    border: .25vmin solid black;
+}
+
+.apple {
+    background-color: red;
+    border: .25vmin solid black;
 }
