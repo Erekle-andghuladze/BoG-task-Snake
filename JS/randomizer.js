@@ -5,3 +5,7 @@ export function randomGridPos() {
         y: Math.floor(Math.random() * gridSize) + 1 
     }
 }
+
+export function outsideGrid(posit) {
+    return (posit.x < 1 || posit.x > gridSize || posit.y < 1 || posit.y > gridSize )  
+}

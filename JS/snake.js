@@ -1,6 +1,6 @@
 import { getControlDirection } from "./controls.js"
 
-export const snake_speed = 4
+export const snake_speed = 6
 
 const snakeBody = [{x: 10, y:10}]
 let newSegments = 0
@@ -33,10 +33,19 @@ export function snakeGrow(amount) {
     newSegments += amount
 }
 
-export function onSnake(position) {
-    return snakeBody.some(segment => {
+export function onSnake(position, {ignoreHead = false} = {}) {
+    return snakeBody.some((segment, index) => {
+        if (ignoreHead && index === 0) return false
         return equalPositions(segment, position)
     })
+}
+
+export function getSnakeHead(){
+    return snakeBody[0]
+}
+
+export function snakeSuicide() {
+    return onSnake(snakeBody[0], { ignoreHead: true})
 }
 
 function equalPositions(position1, position2){
