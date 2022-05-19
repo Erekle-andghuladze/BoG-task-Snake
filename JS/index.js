@@ -8,7 +8,10 @@ const snakegame = document.getElementById('snake-game')
 
 function main(currentTime) {
     if(gameOver){
-        return alert('Game Over')
+        if(confirm('Game Over. Press OK to restart')){
+            document.location = '/'
+        }
+        return
     }
 
     window.requestAnimationFrame(main)
