@@ -1,6 +1,6 @@
 import { getControlDirection } from "./controls.js"
 
-export const snake_speed = 1
+export const snake_speed = 4
 
 const snakeBody = [{x: 10, y:10}]
 
